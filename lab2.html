@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab2</title>
+        <script src="lab2.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="c">
+            <!--button class="btn" onclick="data.refreshTable()">Обновить</button-->
+            <button class="btn" onclick="data.addRandom()">Случайный треугольник</button>
+            <button class="btn" onclick="data.clear()">Очистить</button>
+        </div>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>AB</th>
+                    <th>∠BAC</th>
+                    <th>Показать: <br>
+                        <p id="pSelect">Сторона</p>
+                        <select id="sSelect" onchange="data.select()">
+                            <optgroup label="Сторона">
+                                <option>AB</option>
+                                <option>BC</option>
+                                <option>AC</option>
+                            </optgroup>
+                            <optgroup label="Угол">
+                                <option>∠ABC</option>
+                                <option>∠BAC</option>
+                                <option>∠ACB</option>
+                            </optgroup>
+                            <optgroup label="Высота">
+                                <option>∠ABC</option>
+                                <option>∠BAC</option>
+                                <option>∠ACB</option>
+                            </optgroup>
+                            <optgroup label="Бисектриса">
+                                <option>∠ABC</option>
+                                <option>∠BAC</option>
+                                <option>∠ACB</option>
+                            </optgroup>
+                        </select>
+                    </th>
+                    <th>Изменить<br>размер</th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+            <tbody id="triangles"></tbody>
+        </table>
+        <div class="c">
+            <button class="btn" onclick="data.addNew()">Новый треугольник</button>
+            AB - 
+            <input class="btn" type="text" id="input1" size="5" onkeypress="data.provEnter(event)">
+            ∠ABC - 
+            <input class="btn" type="text" id="input2" size="5" onkeypress="data.provEnter(event)">
+        </div>
+    	<script>data.refreshTable()</script>
+    </body>
+</html>
